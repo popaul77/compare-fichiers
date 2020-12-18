@@ -15,21 +15,14 @@
 SID="$1"
 BUSTER="$2"
 
-source compare-fonctions.sh
+source compare-fonction.sh
 source couleurs
 
-
+## Fonctions communes
 menage
-
 tri
 
-comm-1
-
-comm-2
-
-comm-3
-
-# Fonctions menu
+# Fonctions du menu
 
 incorrect_selection() {
   echo $(ColorRed 'Incorrect_selection! Try again.')
@@ -45,7 +38,7 @@ press_enter() {
 # Menu
 
 menu(){
-echo -ne " My First Menu
+echo -ne " Menu Comparaison fichier_1 fichier_2
         $(ColorGreen '1)') Seulement dans fichier_1
         $(ColorGreen '2)') Seulement dans fichier_2
         $(ColorGreen '3)') Dans fichier_1 et dans fichier_2
