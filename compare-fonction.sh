@@ -26,8 +26,6 @@ comm -2 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 function comm-1() {
 comm -1 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 }
-<<<<<<< HEAD
-=======
 
 #On cherche les fichiers a comparer
 function fichiers12(){
@@ -52,4 +50,3 @@ function fichiers12(){
   echo -e "${ColorGreen} Entrer le nom du fichier 2."
     read BUSTER
 }
->>>>>>> Dev-sources-fichiers
