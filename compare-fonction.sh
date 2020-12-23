@@ -29,7 +29,7 @@ comm -1 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 
 #On cherche les fichiers a comparer
 function fichiers12(){
-  echo -e "${ColorGreen} Les deux fichiers sont dans le même dossier YES/NO"
+  echo -e "$(ColorGreen '__________Les deux fichiers sont dans le même dossier YES/NO__________')"
     read -p "Etes vous sur ? " -n 1 -r
 
     echo ""

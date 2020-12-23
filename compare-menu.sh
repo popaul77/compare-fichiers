@@ -16,9 +16,9 @@ source compare-fonction.sh
 source couleurs
 
 echo ""
-echo -e "${ColorOrange} [ ########## [ Comparaison de deux fichiers ########## ] "
+echo -e "$(ColorOrange '[ ########## [ Comparaison de deux fichiers ########## ]') "
 echo ""
-echo -e "${ColorOrange} il est necessaire que les deux fichier a comparer soit dans le même dossier"
+echo -e "$(ColorOrange '[ il est necessaire que les deux fichier a comparer soit dans le même dossier ]')"
 
 ## Fonctions communes
 fichiers12
@@ -42,9 +42,9 @@ press_enter() {
 
 menu(){
 echo -ne " Menu Comparaison fichier_1 fichier_2
-        $(ColorGreen '1)') Seulement dans fichier_1
-        $(ColorGreen '2)') Seulement dans fichier_2
-        $(ColorGreen '3)') Dans fichier_1 et dans fichier_2
+        $(ColorGreen '1)') Seulement dans fichier_2
+        $(ColorGreen '2)') Dans fichier_1 et dans fichier_2 ou inversement
+        $(ColorGreen '3)') Seulement dans fichier_1
         $(ColorGreen '0)') Exit
         $(ColorBlue 'Choose an option:') "
 
@@ -59,7 +59,10 @@ echo -ne " Menu Comparaison fichier_1 fichier_2
         esac
 }
 
+
+
 # Call the menu function
+echo -e "$(ColorRed '[ Un fichier paquets.txt sera créé dans: ]')$DIR"
 
 until [ "$a" = "0" ]; do
     menu
