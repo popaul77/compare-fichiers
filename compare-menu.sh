@@ -12,11 +12,26 @@
 # il sera possible d'enlever les "echo" qui ont servi au deboggage
 # JPG pour popaul77.org
 
+source compare-fonction.sh
+source couleurs
+
+echo ""
+ echo -e "${ColorOrange} [ ########## [ Comparaison de deux fichiers ########## ] "
+echo ""
+echo -e "${ColorOrange} il est necessaire que les deux fichier a comparer soit dans le même dossier"
+echo -e "${ColorGreen} Les deux fichiers sont dans le même dossier OUI/NON"
+ read YES/NO
+  if [ $? != 0 ]; then
+    exit
+  fi
+echo -e "${ColorGreen} Entrer le chemin relatif du dossier contenant les dossiers a comparer."
+  read Enter
+  cd $HOME/$Enter
+
 SID="$1"
 BUSTER="$2"
 
-source compare-fonction.sh
-source couleurs
+
 
 ## Fonctions communes
 menage
