@@ -26,30 +26,3 @@ comm -2 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 function comm-1() {
 comm -1 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 }
-
-############################################################################
-
-function checkuid()
-{
-  if [ "$UID" -ne "$1" ]
-
-    then
-          echo -e "${RED} [ ERROR ]" "${NC} you must be root to install the server"
-          exit 0
-
-    else
-          echo -e "${GREEN} [ OK ]" "${NC} UID ok, install in progress..."
-
-fi
-}
-
-function espace_disque()
-{
-for disk in $(df |grep dev |grep -v tmpfs |grep -v udev| awk -F" " '{print $1}' | cut -d/ -f3)
-    do
-      echo $disk
-
-        space_use=$(df -Th | grep "$disk" | awk -F" " '{print $4 "/" $5}' | cut -d% -f1)
-
-      echo $space_use
-}
