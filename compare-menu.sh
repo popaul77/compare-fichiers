@@ -12,13 +12,16 @@
 # il sera possible d'enlever les "echo" qui ont servi au deboggage
 # JPG pour popaul77.org
 
-SID="$1"
-BUSTER="$2"
-
 source compare-fonction.sh
 source couleurs
 
+echo ""
+echo -e "${ColorOrange} [ ########## [ Comparaison de deux fichiers ########## ] "
+echo ""
+echo -e "${ColorOrange} il est necessaire que les deux fichier a comparer soit dans le même dossier"
+
 ## Fonctions communes
+fichiers12
 menage
 tri
 
