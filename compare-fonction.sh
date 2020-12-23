@@ -27,29 +27,26 @@ function comm-1() {
 comm -1 /tmp/$SID"-1" /tmp/$BUSTER"-1" | sed -r "s/\t//ig" > paquets.txt
 }
 
-############################################################################
+#On cherche les fichiers a comparer
+function fichiers12(){
+  echo -e "${ColorGreen} Les deux fichiers sont dans le même dossier YES/NO"
+    read -p "Etes vous sur ? " -n 1 -r
 
-function checkuid()
-{
-  if [ "$UID" -ne "$1" ]
+    echo ""
 
-    then
-          echo -e "${RED} [ ERROR ]" "${NC} you must be root to install the server"
-          exit 0
+      if [[ ! $REPLY =~ ^[Yy]$ ]]
+        then
+            exit 1
+      fi
 
-    else
-          echo -e "${GREEN} [ OK ]" "${NC} UID ok, install in progress..."
+  echo -e "${ColorGreen} Entrer le chemin relatif du dossier contenant les dossiers a comparer."
+    read Enter
+      DIR=$HOME/$Enter
+        cd $DIR
 
-fi
-}
+  echo -e "${ColorGreen} Entrer le nom du  fichier 1."
+    read SID
 
-function espace_disque()
-{
-for disk in $(df |grep dev |grep -v tmpfs |grep -v udev| awk -F" " '{print $1}' | cut -d/ -f3)
-    do
-      echo $disk
-
-        space_use=$(df -Th | grep "$disk" | awk -F" " '{print $4 "/" $5}' | cut -d% -f1)
-
-      echo $space_use
+  echo -e "${ColorGreen} Entrer le nom du fichier 2."
+    read BUSTER
 }
