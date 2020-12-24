@@ -39,14 +39,11 @@ function fichiers12(){
             exit 1
       fi
 
-  echo -e "${ColorGreen} Entrer le chemin relatif du dossier contenant les dossiers a comparer."
-    read Enter
-      DIR=$HOME/$Enter
-        cd $DIR
+  read -p "Entrer le chemin relatif du dossier contenant les dossiers a comparer. " Enter
+        DIR=$HOME/$Enter
+          cd $DIR
 
-  echo -e "${ColorGreen} Entrer le nom du  fichier 1."
-    read SID
+  read -p "$(ColorGreen 'Entrer le nom du fichier 1. ')" SID
 
-  echo -e "${ColorGreen} Entrer le nom du fichier 2."
-    read BUSTER
+  read -p "$(ColorGreen 'Entrer le nom du fichier 2. ')" BUSTER
 }
