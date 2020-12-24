@@ -12,16 +12,18 @@
 # il sera possible d'enlever les "echo" qui ont servi au deboggage
 # JPG pour popaul77.org
 
+clear
 source compare-fonction.sh
 source couleurs
 
 echo ""
-echo -e "$(ColorOrange '[ ########## [ Comparaison de deux fichiers ########## ]') "
+echo -e "$(ColorOrange '[ _____ [ Comparaison de deux fichiers ] _____ ]') "
 echo ""
-echo -e "$(ColorOrange '[ il est necessaire que les deux fichier a comparer soit dans le même dossier ]')"
-
+echo -e "$(ColorOrange '[ il est necessaire que les deux fichiers a comparer soient dans le même dossier ]')"
+echo ""
 ## Fonctions communes
 fichiers12
+echo ""
 menage
 tri
 
@@ -63,7 +65,7 @@ echo -ne " Menu Comparaison fichier_1 fichier_2
 
 # Call the menu function
 echo -e "$(ColorRed '[ Un fichier paquets.txt sera créé dans: ]')$DIR"
-
+echo ""
 until [ "$a" = "0" ]; do
     menu
 done
